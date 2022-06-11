@@ -43,5 +43,5 @@ for index, i in enumerate(df_questions['id']): #.head(20) for only first 20 samp
         print("sleeping, wait a moment plz")
 
 # Save to csv
-df.to_csv('policyqa-raw.csv', encoding = 'utf-8-sig') 
-print("Saved to policyqa-raw.csv")
+df.to_csv('..data/policyqa-raw.csv', encoding = 'utf-8-sig') 
+print("Saved to ..data/policyqa-raw.csv")
