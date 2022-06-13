@@ -31,7 +31,10 @@ for index, row in df.iterrows():
   a.append(b)
 
 df["answer_start"] = a
-df.head()
+
+# Save as df for eda
+df.to_csv('../data/policyqa-annotated-clean.csv', encoding = 'utf-8-sig') 
+print("Saved ../data/policyqa-annotated-clean.csv")
 
 # Convert df to json model input
 data = []
