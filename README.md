@@ -14,10 +14,12 @@ We use the machine-translated to Dutch version of SQuAD V2.0. Stanford Question 
 We use Question and Answers from [Rijksoverheid.nl](https://www.rijksoverheid.nl/opendata/vac-s) with over 2000 questions asked by Dutch citizens about government policies. The answers are constructed by domain experts.
 
 ## Notebooks
-1. [policy-qa-eda](github.com): This notebook 
-2. [dutch-squad-eda](github.com):
-3. [policy-qa-modeling](github.com):
-4. [squad-modeling](github.com):
+1. [eda-policyqa](github.com): This notebook is an EDA on the PolicyQA dataset
+2. [eda-squad](github.com): This notebook is an EDA on the SQuAD dataset
+3. [modeling-lstm-policyqa](github.com): This notebook contains the LSTM model and is trained/tested on the PolicyQA dataset
+4. [modeling-lstm-squad](github.com): This notebook contains the LSTM model and is trained/tested on the SQuAD dataset
+5. [modeling-bert-policyqa](github.com): This notebook contains the three Bert-based models and is trained/tested on the PolicyQA dataset
+6. [modeling-bert-squad](github.com): This notebook contains the three Bert-based models model and is trained/tested on the SQuAD dataset
 
 ## Contact
 Please contact via [Linkedin - Berry Blom](https://www.linkedin.com/in/berry-blom/) for help or submit an issue. 
