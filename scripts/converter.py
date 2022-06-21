@@ -7,8 +7,8 @@ import json
 import io
 
 # Import data
-df = pd.read_csv('../data/policyqa-annotated.csv')
-df = df.head(150)
+df = pd.read_csv('../data/policyqa300.csv')
+df = df.head(300)
 df.head()
 
 # Lower case all answers
@@ -27,7 +27,7 @@ df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r"\\n",
 # Add all short answer character positions
 a = []
 for index, row in df.iterrows():
-  b = df["introductioncontent"][index].find(df["answer_short"][index])
+  b = str(df["introductioncontent"][index]).find(str(df["answer_short"][index]))
   a.append(b)
 
 df["answer_start"] = a
@@ -63,7 +63,7 @@ for index, row in df.iterrows():
     data.append(text)
 
 # Save as a more modern json file
-with open('../data/dataV3.json', 'w', encoding='utf-8') as f:
+with open('../data/dataV4.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
 
-print("Saved to dataV3.json")
+print("Saved to dataV4.json")
