@@ -7,9 +7,8 @@ import json
 import io
 
 # Import data
-df = pd.read_csv('../data/policyqa300.csv')
-df = df.head(300)
-df.head()
+df = pd.read_csv('../data/policyqa500.csv')
+df = df[400:500]
 
 # Lower case all answers
 df["answer_short"] = df["answer_short"].str.lower()
@@ -23,6 +22,8 @@ df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r'\{', 
 df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r'\}', value='', regex=True)
 df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r"'", value='', regex=True)
 df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r"\\n", value='', regex=True)
+df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r"paragraph", value='', regex=True)
+df["introductioncontent"] = df["introductioncontent"].replace(to_replace=r"paragraphtitle", value='', regex=True)
 
 # Add all short answer character positions
 a = []
@@ -63,7 +64,7 @@ for index, row in df.iterrows():
     data.append(text)
 
 # Save as a more modern json file
-with open('../data/dataV4.json', 'w', encoding='utf-8') as f:
+with open('../data/dataTailv2.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=4)
 
-print("Saved to dataV4.json")
+print("Saved to dataTailv2.json")
